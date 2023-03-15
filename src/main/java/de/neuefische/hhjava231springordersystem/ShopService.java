@@ -51,4 +51,8 @@ public class ShopService {
         Order order = new Order(idService.generateId(), allProducts);
         return orderRepository.add(order);
     }
+
+    public void deleteOrder(String id) {
+        orderRepository.remove(id);
+    }
 }

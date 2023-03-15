@@ -32,4 +32,8 @@ public class OrderRepository {
         orders.put(order.getId(), order);
         return order;
     }
+
+    public void remove(String id) {
+        orders.remove(id);
+    }
 }

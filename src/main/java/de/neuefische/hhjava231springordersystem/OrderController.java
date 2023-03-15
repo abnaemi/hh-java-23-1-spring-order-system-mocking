@@ -1,5 +1,7 @@
 package de.neuefische.hhjava231springordersystem;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -27,6 +29,12 @@ public class OrderController {
     @PostMapping("orders")
     public Order addOrder(@RequestBody List<String> productIds) {
         return shopService.addOrder(productIds);
+    }
+
+    @DeleteMapping("orders/{id}")
+    public ResponseEntity deleteOrder (@PathVariable String id){
+        shopService.deleteOrder(id);
+        return new ResponseEntity(HttpStatus.NO_CONTENT);
     }
 
 }

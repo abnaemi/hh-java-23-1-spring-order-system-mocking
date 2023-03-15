@@ -13,5 +13,8 @@ public class Order {
     private String id;
     private List<Product> products;
 
+    public void removeOrder (String id){
+        products.remove(id);
+    }
 
 }
